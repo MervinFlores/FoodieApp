@@ -1,0 +1,45 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'FoodieApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FoodieApp
+
+# Networking
+pod 'Alamofire'
+pod 'AlamofireImage'
+
+# Warning Notifications
+pod 'Toaster', '~> 2.0'
+
+#pod 'PureLayout'
+
+# Custom Activity Indicator
+  pod 'PKHUD'
+  pod 'MBProgressHUD'
+
+ # JSON handling
+  pod 'SwiftyJSON'
+  pod 'Argo'
+  pod 'Curry'
+
+ # Hashs
+  pod 'CryptoSwift'
+
+ # Keyboard
+  pod 'IQKeyboardManagerSwift'
+
+
+  target 'FoodieAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'FoodieAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

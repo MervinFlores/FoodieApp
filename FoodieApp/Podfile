@@ -31,6 +31,12 @@ pod 'Toaster', '~> 2.0'
  # Keyboard
   pod 'IQKeyboardManagerSwift'
 
+ # DataBase
+  pod 'RealmSwift'
+
+ # For SideMenu
+  pod 'SideMenu'
+
 
   target 'FoodieAppTests' do
     inherit! :search_paths

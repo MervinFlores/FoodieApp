@@ -17,6 +17,9 @@
 		F42FDA17230F3B0700D80A0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42FDA15230F3B0700D80A0E /* LaunchScreen.storyboard */; };
 		F42FDA22230F3B0700D80A0E /* FoodieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA21230F3B0700D80A0E /* FoodieAppTests.swift */; };
 		F42FDA2D230F3B0700D80A0E /* FoodieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA2C230F3B0700D80A0E /* FoodieAppUITests.swift */; };
+		F42FDA44230F706A00D80A0E /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA43230F706A00D80A0E /* ViewExtension.swift */; };
+		F42FDA46230F707500D80A0E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA45230F707500D80A0E /* StringExtension.swift */; };
+		F42FDA48230F708400D80A0E /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA47230F708400D80A0E /* StoryBoardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		F42FDA28230F3B0700D80A0E /* FoodieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42FDA2C230F3B0700D80A0E /* FoodieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieAppUITests.swift; sourceTree = "<group>"; };
 		F42FDA2E230F3B0700D80A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F42FDA43230F706A00D80A0E /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		F42FDA45230F707500D80A0E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F42FDA47230F708400D80A0E /* StoryBoardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +143,11 @@
 		F42FDA0B230F3B0500D80A0E /* FoodieApp */ = {
 			isa = PBXGroup;
 			children = (
-				F42FDA0C230F3B0500D80A0E /* AppDelegate.swift */,
-				F42FDA0E230F3B0500D80A0E /* ViewController.swift */,
-				F42FDA10230F3B0500D80A0E /* Main.storyboard */,
-				F42FDA13230F3B0700D80A0E /* Assets.xcassets */,
-				F42FDA15230F3B0700D80A0E /* LaunchScreen.storyboard */,
-				F42FDA18230F3B0700D80A0E /* Info.plist */,
+				F42FDA42230F6FF800D80A0E /* Utils */,
+				F42FDA3F230F6FC900D80A0E /* Model */,
+				F42FDA3C230F6F9900D80A0E /* Views */,
+				F42FDA3B230F6F8C00D80A0E /* View Controllers */,
+				F42FDA3A230F6F8000D80A0E /* Supporting Files */,
 			);
 			path = FoodieApp;
 			sourceTree = "<group>";
@@ -163,6 +168,82 @@
 				F42FDA2E230F3B0700D80A0E /* Info.plist */,
 			);
 			path = FoodieAppUITests;
+			sourceTree = "<group>";
+		};
+		F42FDA3A230F6F8000D80A0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F42FDA0C230F3B0500D80A0E /* AppDelegate.swift */,
+				F42FDA13230F3B0700D80A0E /* Assets.xcassets */,
+				F42FDA15230F3B0700D80A0E /* LaunchScreen.storyboard */,
+				F42FDA18230F3B0700D80A0E /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F42FDA3B230F6F8C00D80A0E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F42FDA0E230F3B0500D80A0E /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F42FDA3C230F6F9900D80A0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F42FDA3E230F6FB900D80A0E /* CustomViews */,
+				F42FDA3D230F6FA500D80A0E /* StoryBoards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F42FDA3D230F6FA500D80A0E /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				F42FDA10230F3B0500D80A0E /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		F42FDA3E230F6FB900D80A0E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		F42FDA3F230F6FC900D80A0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F42FDA40230F6FD300D80A0E /* DataBase */,
+				F42FDA41230F6FE900D80A0E /* API */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F42FDA40230F6FD300D80A0E /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		F42FDA41230F6FE900D80A0E /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F42FDA42230F6FF800D80A0E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F42FDA43230F706A00D80A0E /* ViewExtension.swift */,
+				F42FDA45230F707500D80A0E /* StringExtension.swift */,
+				F42FDA47230F708400D80A0E /* StoryBoardExtension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +467,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42FDA46230F707500D80A0E /* StringExtension.swift in Sources */,
+				F42FDA44230F706A00D80A0E /* ViewExtension.swift in Sources */,
 				F42FDA0F230F3B0500D80A0E /* ViewController.swift in Sources */,
+				F42FDA48230F708400D80A0E /* StoryBoardExtension.swift in Sources */,
 				F42FDA0D230F3B0500D80A0E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,7 +649,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U5UP96Z4H7;
-				INFOPLIST_FILE = FoodieApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FoodieApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U5UP96Z4H7;
-				INFOPLIST_FILE = FoodieApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FoodieApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

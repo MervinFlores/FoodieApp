@@ -11,6 +11,8 @@ import UIKit
 
 public class APIConst {
     
+    static let zomatoKey = "1590867d483d00b2872f0e3ca3c79d15"
+    
     static var baseURL: String {
         return ""
     }

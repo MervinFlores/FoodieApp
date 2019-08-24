@@ -25,6 +25,7 @@ class APIRequestAdapter: RequestAdapter {
                     DispatchQueue.main.sync() {
                     }
                 }
+                urlRequest.setValue("\(APIConst.zomatoKey)", forHTTPHeaderField: APIConst.HttpHeaders.USER_KEY)
             }
         }
         return urlRequest

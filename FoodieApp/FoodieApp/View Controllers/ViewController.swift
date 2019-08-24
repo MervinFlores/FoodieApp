@@ -12,9 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        GeneralManager.getCategories { (response) in
+            switch response {
+            case .success(let category):
+                print(category)
+            case .error:
+                print("error")
+            }
+        }
     }
-
-
 }
 

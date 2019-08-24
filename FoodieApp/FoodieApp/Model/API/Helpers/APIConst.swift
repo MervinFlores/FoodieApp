@@ -14,7 +14,7 @@ public class APIConst {
     static let zomatoKey = "1590867d483d00b2872f0e3ca3c79d15"
     
     static var baseURL: String {
-        return ""
+        return "https://developers.zomato.com/api/v2.1"
     }
     
     struct MediaTypes {
@@ -43,6 +43,8 @@ public class APIConst {
         static let ETAG_REQUEST = "If-None-Match"
         
         static let ETAG_RESPONSE = "Etag"
+        
+        static let USER_KEY = "user-key"
     }
     
     static let deviceDensityHeaderValue = "\(Int(160 * UIScreen.main.scale))"

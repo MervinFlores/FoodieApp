@@ -26,6 +26,13 @@
 		F42FDA54230F73C600D80A0E /* APIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA53230F73C600D80A0E /* APIConst.swift */; };
 		F42FDA56230F73CF00D80A0E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA55230F73CF00D80A0E /* APIClient.swift */; };
 		F42FDA58230F75D200D80A0E /* RealmGeneralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA57230F75D200D80A0E /* RealmGeneralManager.swift */; };
+		F42FDA5A231078AD00D80A0E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA59231078AD00D80A0E /* Categories.swift */; };
+		F42FDA5C23107A8000D80A0E /* GeneralRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA5B23107A8000D80A0E /* GeneralRouter.swift */; };
+		F42FDA5E23107B5600D80A0E /* GeneralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA5D23107B5600D80A0E /* GeneralManager.swift */; };
+		F42FDA6023107D2900D80A0E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA5F23107D2900D80A0E /* Restaurant.swift */; };
+		F42FDA622310829B00D80A0E /* RestaurantDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA612310829B00D80A0E /* RestaurantDetailsInfo.swift */; };
+		F42FDA64231085CC00D80A0E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42FDA63231085CC00D80A0E /* TimeUtils.swift */; };
+		F4F225882310CB8F00A49299 /* CategoryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F225872310CB8F00A49299 /* CategoryObj.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,13 @@
 		F42FDA53230F73C600D80A0E /* APIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConst.swift; sourceTree = "<group>"; };
 		F42FDA55230F73CF00D80A0E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F42FDA57230F75D200D80A0E /* RealmGeneralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGeneralManager.swift; sourceTree = "<group>"; };
+		F42FDA59231078AD00D80A0E /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		F42FDA5B23107A8000D80A0E /* GeneralRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRouter.swift; sourceTree = "<group>"; };
+		F42FDA5D23107B5600D80A0E /* GeneralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralManager.swift; sourceTree = "<group>"; };
+		F42FDA5F23107D2900D80A0E /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		F42FDA612310829B00D80A0E /* RestaurantDetailsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsInfo.swift; sourceTree = "<group>"; };
+		F42FDA63231085CC00D80A0E /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
+		F4F225872310CB8F00A49299 /* CategoryObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryObj.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				F42FDA57230F75D200D80A0E /* RealmGeneralManager.swift */,
+				F4F225872310CB8F00A49299 /* CategoryObj.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -259,6 +274,7 @@
 				F42FDA43230F706A00D80A0E /* ViewExtension.swift */,
 				F42FDA45230F707500D80A0E /* StringExtension.swift */,
 				F42FDA47230F708400D80A0E /* StoryBoardExtension.swift */,
+				F42FDA63231085CC00D80A0E /* TimeUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -278,6 +294,7 @@
 		F42FDA4A230F72BA00D80A0E /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				F42FDA5B23107A8000D80A0E /* GeneralRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -285,6 +302,9 @@
 		F42FDA4B230F72C500D80A0E /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
+				F42FDA59231078AD00D80A0E /* Categories.swift */,
+				F42FDA5F23107D2900D80A0E /* Restaurant.swift */,
+				F42FDA612310829B00D80A0E /* RestaurantDetailsInfo.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -292,6 +312,7 @@
 		F42FDA4C230F730800D80A0E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F42FDA5D23107B5600D80A0E /* GeneralManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -518,15 +539,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42FDA46230F707500D80A0E /* StringExtension.swift in Sources */,
+				F42FDA64231085CC00D80A0E /* TimeUtils.swift in Sources */,
+				F42FDA622310829B00D80A0E /* RestaurantDetailsInfo.swift in Sources */,
+				F4F225882310CB8F00A49299 /* CategoryObj.swift in Sources */,
 				F42FDA44230F706A00D80A0E /* ViewExtension.swift in Sources */,
 				F42FDA0F230F3B0500D80A0E /* ViewController.swift in Sources */,
 				F42FDA56230F73CF00D80A0E /* APIClient.swift in Sources */,
 				F42FDA4E230F738B00D80A0E /* APICallError.swift in Sources */,
+				F42FDA6023107D2900D80A0E /* Restaurant.swift in Sources */,
+				F42FDA5A231078AD00D80A0E /* Categories.swift in Sources */,
 				F42FDA48230F708400D80A0E /* StoryBoardExtension.swift in Sources */,
+				F42FDA5C23107A8000D80A0E /* GeneralRouter.swift in Sources */,
 				F42FDA50230F73A900D80A0E /* APIResponseHandler.swift in Sources */,
 				F42FDA58230F75D200D80A0E /* RealmGeneralManager.swift in Sources */,
 				F42FDA54230F73C600D80A0E /* APIConst.swift in Sources */,
 				F42FDA52230F73B700D80A0E /* APIRequestAdapter.swift in Sources */,
+				F42FDA5E23107B5600D80A0E /* GeneralManager.swift in Sources */,
 				F42FDA0D230F3B0500D80A0E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

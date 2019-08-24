@@ -11,12 +11,14 @@ import Alamofire
 
 enum GeneralRouter: URLRequestConvertible {
     case getCategories
+    case getRestaurantsBy(categoryID: Int)
     
     var method: HTTPMethod {
         switch self {
         case .getCategories:
             return .get
-            
+        case .getRestaurantsBy:
+            return .get
         }
     }
     
@@ -24,6 +26,8 @@ enum GeneralRouter: URLRequestConvertible {
         switch self {
         case .getCategories:
             return "/categories"
+        case .getRestaurantsBy:
+            return "/search"
         }
     }
     
@@ -34,6 +38,10 @@ enum GeneralRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
+        case .getRestaurantsBy(let categoryID):
+            let searchParams = ["category": categoryID]
+            urlRequest = try URLEncoding.queryString.encode(urlRequest, with: searchParams)
+            
         default:
             break
         }

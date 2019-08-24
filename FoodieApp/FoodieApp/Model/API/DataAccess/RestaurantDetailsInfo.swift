@@ -38,20 +38,26 @@ extension LocationInfo: Argo.Decodable {
 
 //MARK: - UserRating
 struct UserRating{
-    var aggregateRating: Int?
-    var ratingText: String?
-    var ratingColor: String?
-    var votes: String?
+    var rating_text: String?
+    var rating_color: String?
+    var custom_rating_text: String?
+    var custom_rating_text_background: String?
+    var rating_tool_tip: String?
 }
+
+
 
 extension UserRating: Argo.Decodable {
     static func decode(_ json: JSON) -> Decoded<UserRating> {
+        
+        print(json.description)
         let userRating = curry(UserRating.init)
         return userRating
-            <^> json <|? "aggregate_rating"
-            <*> json <|? "rating_text"
+            <^> json <|? "rating_text"
             <*> json <|? "rating_color"
-            <*> json <|? "votes"
+            <*> json <|? "custom_rating_text"
+            <*> json <|? "custom_rating_text_background"
+            <*> json <|? "rating_tool_tip"
     }
 }
 
@@ -74,15 +80,15 @@ extension ReviewInfo: Argo.Decodable {
         let reviewInfo = curry(ReviewInfo.init)
         return reviewInfo
             <^> json <|? "rating"
-            <*> json <|? "review_text"
-            <*> json <|? "id"
-            <*> json <|? "rating_color"
-            <*> json <|? "review_time_friendly"
-            <*> json <|? "rating_text"
-            <*> json <|? "timestamp"
-            <*> json <|? "likes"
-            <*> json <|? "user"
-            <*> json <|? "comments_count"
+            <*> json <|? ["reviews", "review_text"]
+            <*> json <|? ["reviews", "id"]
+            <*> json <|? ["reviews", "rating_color"]
+            <*> json <|? ["reviews", "review_time_friendly"]
+            <*> json <|? ["reviews", "rating_text"]
+            <*> json <|? ["reviews", "timestamp"]
+            <*> json <|? ["reviews", "likes"]
+            <*> json <|? ["reviews", "user"]
+            <*> json <|? ["reviews", "comments_count"]
     }
 }
 
@@ -95,12 +101,10 @@ struct PhotosInfo {
     var user: UserInfo?
     var resID: Int?
     var caption: String?
-    var timestamp: Date?
+    var timestamp: Int?
     var friendlyTime: String?
     var width: Int?
     var height: Int?
-    var commentsCount: Int?
-    var likesCount: Int?
 }
 
 extension PhotosInfo: Argo.Decodable {
@@ -113,12 +117,10 @@ extension PhotosInfo: Argo.Decodable {
             <*> json <|? "user"
             <*> json <|? "res_id"
             <*> json <|? "caption"
-            <*> .optional(json <|? "timestamp" >>- TimeUtils.decodedDateFromTimestamp)
+            <*> json <|? "timestamp"
             <*> json <|? "friendly_time"
             <*> json <|? "width"
             <*> json <|? "height"
-            <*> json <|? "comments_count"
-            <*> json <|? "likes_count"
     }
 }
 

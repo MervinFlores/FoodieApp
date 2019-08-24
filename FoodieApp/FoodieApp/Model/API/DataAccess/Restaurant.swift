@@ -30,12 +30,12 @@ extension RestaurantsBean: Argo.Decodable {
 }
 
 struct Restaurant {
-    var id: Int?
+    var id: String?
     var name: String?
     var url: String?
     var location: LocationInfo?
-    var average_cost_for_two: String?
-    var price_range: String?
+    var average_cost_for_two: Int?
+    var price_range: Int?
     var currency: String?
     var thumb: String?
     var featured_image: String?
@@ -48,36 +48,36 @@ struct Restaurant {
     var has_table_booking: Int?
     var cuisines: String?
     var all_reviews_count: Int?
-    var photo_count: Int?
     var phoneNumbers: String?
+    var timings: String?
 }
 
 extension Restaurant: Argo.Decodable {
     static func decode(_ json: JSON) -> Decoded<Restaurant> {
-        let has_online_delivery: Decoded<[ReviewInfo]?> = json <||? "all_reviews"
+        let has_online_delivery: Decoded<[ReviewInfo]?> = json <||? ["restaurant", "reviews"]
         
         let restaurant = curry(Restaurant.init)
-            <^> json <|? "id"
-            <*> json <|? "name"
-            <*> json <|? "url"
-            <*> json <|? "location"
-            <*> json <|? "average_cost_for_two"
-            <*> json <|? "price_range"
-            <*> json <|? "currency"
-            <*> json <|? "thumb"
-            <*> json <|? "featured_image"
-            <*> json <|? "events_url"
-            <*> json <|? "user_rating"
-            <*> json <|? "has_online_delivery"
-            <*> json <|? "is_delivering_now"
-            <*> json <||? "photos"
+            <^> json <|? ["restaurant", "id"]
+            <*> json <|? ["restaurant", "name"]
+            <*> json <|? ["restaurant", "url"]
+            <*> json <|? ["restaurant", "location"]
+            <*> json <|? ["restaurant", "average_cost_for_two"]
+            <*> json <|? ["restaurant", "price_range"]
+            <*> json <|? ["restaurant", "currency"]
+            <*> json <|? ["restaurant", "thumb"]
+            <*> json <|? ["restaurant", "featured_image"]
+            <*> json <|? ["restaurant", "events_url"]
+            <*> json <|? ["restaurant", "user_rating"]
+            <*> json <|? ["restaurant", "has_online_delivery"]
+            <*> json <|? ["restaurant", "is_delivering_now"]
+            <*> json <||? ["restaurant", "photos"]
             <*> has_online_delivery
         
         return restaurant
-            <*> json <|? "has_table_booking"
-            <*> json <|? "cuisines"
-            <*> json <|? "all_reviews_count"
-            <*> json <|? "photo_count"
-            <*> json <|? "phoneNumbers"
+            <*> json <|? ["restaurant", "has_table_booking"]
+            <*> json <|? ["restaurant", "cuisines"]
+            <*> json <|? ["restaurant", "all_reviews_count"]
+            <*> json <|? ["restaurant", "phone_numbers"]
+            <*> json <|? ["restaurant", "timings"]
     }
 }

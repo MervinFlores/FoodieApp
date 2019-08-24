@@ -24,6 +24,10 @@ class TimeUtils {
         return .fromOptional(asDate)
         
     }
+    
+    public static func decodedStringFromTimestamp(_ fromTimestamp: Int?) -> Argo.Decoded<String?> {
+            return .fromOptional("\(fromTimestamp!)")
+    }
 }
 
 extension Date {

@@ -31,4 +31,26 @@ class GeneralManager {
             callback(.error)
         }
     }
+    
+    //MARK: - Get Restaurants by category
+    
+    enum getRestaurantsByCategoryCallback {
+        case success([Restaurant])
+        case error
+    }
+    
+    typealias getRestaurantsByCategoryCallbacks = (getRestaurantsByCategoryCallback) -> Void
+    
+    static func getRestaurantsBy(categoryID: Int, callback: @escaping getRestaurantsByCategoryCallbacks){
+        
+        APIClient.executeRequest(req: APIClient.request(GeneralRouter.getRestaurantsBy(categoryID: categoryID)), onSuccess: { (res: RestaurantsBean?, _) in
+            if let response = res{
+                callback(.success(response.restaurants!))
+            } else {
+                callback(.error)
+            }
+        }) { (error, _) in
+            callback(.error)
+        }
+    }
 }

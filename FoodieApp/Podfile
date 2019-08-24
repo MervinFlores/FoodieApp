@@ -35,7 +35,7 @@ pod 'Toaster', '~> 2.0'
   pod 'RealmSwift'
 
  # For SideMenu
-  pod 'SideMenu'
+  pod 'SideMenu', '5.0.3'
 
 
   target 'FoodieAppTests' do

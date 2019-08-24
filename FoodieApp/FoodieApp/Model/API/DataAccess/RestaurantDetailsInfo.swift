@@ -20,6 +20,7 @@ struct LocationInfo {
     var longitude: String?
     var zipcode: String?
     var countryID: Int?
+    var localityVerbose: String?
 }
 
 extension LocationInfo: Argo.Decodable {
@@ -33,24 +34,21 @@ extension LocationInfo: Argo.Decodable {
             <*> json <|? "longitude"
             <*> json <|? "zipcode"
             <*> json <|? "country_id"
+            <*> json <|? "locality_verbose"
     }
 }
 
 //MARK: - UserRating
 struct UserRating{
-    var rating_text: String?
-    var rating_color: String?
-    var custom_rating_text: String?
-    var custom_rating_text_background: String?
-    var rating_tool_tip: String?
+    var ratingText: String?
+    var ratingColor: String?
+    var customRatingText: String?
+    var customRatingTextBackground: String?
+    var ratingToolTip: String?
 }
-
-
 
 extension UserRating: Argo.Decodable {
     static func decode(_ json: JSON) -> Decoded<UserRating> {
-        
-        print(json.description)
         let userRating = curry(UserRating.init)
         return userRating
             <^> json <|? "rating_text"

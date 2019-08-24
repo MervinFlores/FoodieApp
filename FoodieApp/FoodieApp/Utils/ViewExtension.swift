@@ -8,11 +8,32 @@
 
 import Foundation
 import UIKit
+import PKHUD
 
-extension UIStoryboard {
+extension UIView{
+    func showLoading(message:String = "") {
+        if let controller = self.inputViewController{
+            controller.navigationItem.rightBarButtonItem?.isEnabled = false
+            controller.navigationItem.leftBarButtonItem?.isEnabled = false
+        }
+        HUD.dimsBackground = false
+        HUD.allowsInteraction = false
+        HUD.show(.progress, onView: self)
+    }
     
-    //Main
-    static func Main () -> UIStoryboard {
-        return UIStoryboard(name:"Main", bundle: Bundle.main)
+    func showSuccessIndicator(message:String = "") {
+        HUD.flash(.success, delay: 1.0)
+    }
+    
+    func showErrorIndicator(){
+        HUD.flash(.error, delay: 1.0)
+    }
+    
+    func dissmissLoading (isSuccess:Bool = true){
+        if let controller = self.inputViewController{
+            controller.navigationItem.rightBarButtonItem?.isEnabled = true
+            controller.navigationItem.leftBarButtonItem?.isEnabled = true
+        }
+        HUD.hide()
     }
 }

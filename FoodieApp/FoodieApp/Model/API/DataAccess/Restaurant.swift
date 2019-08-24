@@ -12,9 +12,9 @@ import Curry
 import Runes
 
 struct RestaurantsBean{
-    var results_found: Int?
-    var results_start: Int?
-    var results_shown: Int?
+    var resultsFound: Int?
+    var resultsStart: Int?
+    var resultsShown: Int?
     var restaurants: [Restaurant]?
 }
 
@@ -34,20 +34,20 @@ struct Restaurant {
     var name: String?
     var url: String?
     var location: LocationInfo?
-    var average_cost_for_two: Int?
-    var price_range: Int?
+    var averageCostForTwo: Int?
+    var priceRange: Int?
     var currency: String?
     var thumb: String?
-    var featured_image: String?
-    var events_url: String?
-    var user_rating: UserRating?
-    var has_online_delivery: Int?
-    var is_delivering_now: Int?
+    var featuredImage: String?
+    var eventsUrl: String?
+    var userRating: UserRating?
+    var hasOnlineDelivery: Int?
+    var isDeliveringNow: Int?
     var photos: [PhotosInfo]?
-    var all_reviews: [ReviewInfo]?
-    var has_table_booking: Int?
+    var allReviews: [ReviewInfo]?
+    var hasTableBooking: Int?
     var cuisines: String?
-    var all_reviews_count: Int?
+    var allReviewsCount: Int?
     var phoneNumbers: String?
     var timings: String?
 }

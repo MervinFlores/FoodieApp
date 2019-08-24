@@ -13,6 +13,8 @@ public class APIConst {
     
     static let zomatoKey = "1590867d483d00b2872f0e3ca3c79d15"
     
+    static let imagePlaceholderURL = "https://www.google.com/imgres?imgurl=http%3A%2F%2Fleeford.in%2Fwp-content%2Fuploads%2F2017%2F09%2Fimage-not-found.jpg&imgrefurl=http%3A%2F%2Fleeford.in%2Fimage-not-found%2F&docid=KWeCaXjU2qUIfM&tbnid=k0VW-R0rWNOBRM%3A&vet=10ahUKEwjs89a9qJvkAhXQUt8KHbyXAwMQMwg9KAEwAQ..i&w=1240&h=620&client=safari&bih=750&biw=1324&q=image%20not%20found&ved=0ahUKEwjs89a9qJvkAhXQUt8KHbyXAwMQMwg9KAEwAQ&iact=mrc&uact=8"
+    
     static var baseURL: String {
         return "https://developers.zomato.com/api/v2.1"
     }
